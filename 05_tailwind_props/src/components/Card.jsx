@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Card(props) {
+function Card({user={}, contributors = '', nums=[]}) {
   return (
     <>
         <div className='bg-white text-center p-3 m-5 rounded-2xl'>
@@ -16,7 +16,7 @@ function Card(props) {
           <img className="inline-block h-12 w-12 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
         </div>
         <div className="mt-3 text-sm font-medium">
-          <a href="#" className="text-blue-500">{props.user && props.user.name} {props.nums && props.nums.map((val) => val + ' ')} + {props.contributors} others</a>
+          <a href="#" className="text-blue-500">{user.name}{user.age && `(${user.age})`} {nums.map((val) => val + ' ')} + {contributors} others</a>
         </div>
       </div>
     </>
