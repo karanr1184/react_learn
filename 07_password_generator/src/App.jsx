@@ -55,9 +55,9 @@ function App() {
             <input 
               type="range" 
               name="length" 
-              id="length-ip" 
+              id="length-ip"
               value={length} 
-              onChange={(e) => setLength(e.target.value)}
+              onChange={(e) => setLength(parseInt(e.target.value))}
               className='outline-none'
               min={6}
               max={100}
@@ -69,7 +69,7 @@ function App() {
               type="checkbox" 
               name="numbers_allowed" 
               id="num-ip" 
-              value={numberAllowed} 
+              checked={numberAllowed} 
               onClick={() => setNumberAllowed((prev) => !prev)}
               className='cursor-pointer outline-none'
               />
@@ -80,7 +80,7 @@ function App() {
               type="checkbox" 
               name="character_allowed" 
               id="char-ip" 
-              value={charAllowed} 
+              checked={charAllowed} 
               onClick={() => setCharAllowed((prev) => !prev)}
               className='cursor-pointer'
               />
